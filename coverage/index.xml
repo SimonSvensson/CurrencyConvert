@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <build time="Thu Nov 23 4:14:58 GMT+0000 2017" phpunit="6.4.4" coverage="5.2.3">
+    <runtime name="PHP" version="7.1.11" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="2.5.5"/>
+  </build>
+  <project source="/Applications/MAMP/htdocs/application">
+    <tests>
+      <test name="Welcome_test::test_index" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="384" comments="15" code="369" executable="191" executed="4" percent="2.09"/>
+        <methods count="1" tested="1" percent="100.00"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="1" tested="1" percent="100.00"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="controllers">
+        <totals>
+          <lines total="27" comments="15" code="12" executable="2" executed="2" percent="100.00"/>
+          <methods count="1" tested="1" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="Main.php" href="controllers/Main.php.xml">
+          <totals>
+            <lines total="27" comments="15" code="12" executable="2" executed="2" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="views">
+        <totals>
+          <lines total="357" comments="0" code="357" executable="189" executed="2" percent="1.06"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="errors">
+          <totals>
+            <lines total="315" comments="0" code="315" executable="187" executed="0" percent="0.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="cli">
+            <totals>
+              <lines total="63" comments="0" code="63" executable="19" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="error_404.php" href="views/errors/cli/error_404.php.xml">
+              <totals>
+                <lines total="7" comments="0" code="7" executable="5" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_db.php" href="views/errors/cli/error_db.php.xml">
+              <totals>
+                <lines total="7" comments="0" code="7" executable="5" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_exception.php" href="views/errors/cli/error_exception.php.xml">
+              <totals>
+                <lines total="21" comments="0" code="21" executable="2" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_general.php" href="views/errors/cli/error_general.php.xml">
+              <totals>
+                <lines total="7" comments="0" code="7" executable="5" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_php.php" href="views/errors/cli/error_php.php.xml">
+              <totals>
+                <lines total="21" comments="0" code="21" executable="2" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="html">
+            <totals>
+              <lines total="252" comments="0" code="252" executable="168" executed="0" percent="0.00"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="error_404.php" href="views/errors/html/error_404.php.xml">
+              <totals>
+                <lines total="63" comments="0" code="63" executable="52" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_db.php" href="views/errors/html/error_db.php.xml">
+              <totals>
+                <lines total="63" comments="0" code="63" executable="52" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_exception.php" href="views/errors/html/error_exception.php.xml">
+              <totals>
+                <lines total="31" comments="0" code="31" executable="6" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_general.php" href="views/errors/html/error_general.php.xml">
+              <totals>
+                <lines total="63" comments="0" code="63" executable="52" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="error_php.php" href="views/errors/html/error_php.php.xml">
+              <totals>
+                <lines total="32" comments="0" code="32" executable="6" executed="0" percent="0.00"/>
+                <methods count="0" tested="0" percent="0"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="0" tested="0" percent="0"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+        </directory>
+        <file name="mainview.php" href="views/mainview.php.xml">
+          <totals>
+            <lines total="42" comments="0" code="42" executable="2" executed="2" percent="100.00"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+    </directory>
+  </project>
+</phpunit>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="error_db.php" path="/views/errors/cli">
+    <totals>
+      <lines total="7" comments="0" code="7" executable="5" executed="0" percent="0.00"/>
+      <methods count="0" tested="0" percent="0"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="0" tested="0" percent="0"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_STRING">defined</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'BASEPATH'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LOGICAL_OR">OR</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXIT">exit</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'No direct script access allowed'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="3"/>
+      <line no="4">
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"\nDatabase error: "</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="5">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_VARIABLE">$heading</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="6">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"\n\n"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="7">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_VARIABLE">$message</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="8">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"\n\n"</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+    </source>
+  </file>
+</phpunit>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CodeIgniter Application Test Suite" tests="3" assertions="3" errors="0" failures="1" skipped="0" time="0.044586">
+    <testsuite name="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" tests="3" assertions="3" errors="0" failures="1" skipped="0" time="0.044586">
+      <testcase name="test_index" class="Main_test" classname="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="13" assertions="1" time="0.019942">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Main_test::test_index
+Failed asserting that '&lt;link href="/assets/css/bootstrap.min.css" rel="stylesheet"&gt;\n
+&lt;link href="/assets/css/bootstrap-select.css" rel="stylesheet"&gt;\n
+&lt;script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;\n
+&lt;script type="text/javascript" src="/assets/js/bootstrap.min.js"&gt;&lt;/script&gt;\n
+&lt;script type="text/javascript" src="/assets/js/bootstrap-select.min.js"&gt;&lt;/script&gt;\n
+\n
+&lt;div class="container"&gt;\n
+\n
+&lt;form action="/index.php/main/index" class="form-inline" method="post" accept-charset="utf-8"&gt;\n
+&lt;/br&gt;\n
+&lt;legend&gt;Currency Converter&lt;/legend&gt;\n
+&lt;/br&gt;\n
+\n
+&lt;div style="margin-left:30%;margin-top:20px;" &gt;\n
+\n
+    &lt;div class="form-group"&gt;\n
+            &lt;input type="text" name="source" class="form-control" /&gt;\n
+            &lt;select class="selectpicker" name="source_currency"&gt;\n
+                    &lt;optgroup label="Common"&gt;\n
+                            &lt;option&gt;EUR&lt;/option&gt;\n
+                    &lt;/optgroup&gt;\n
+                    &lt;optgroup label="Others"&gt;\n
+                            &lt;option&gt;PEN&lt;/option&gt;\n
+                    &lt;/optgroup&gt;\n
+            &lt;/select&gt;\n
+\n
+            &lt;input type="text" name="target" class="form-control" /&gt;\n
+            &lt;select class="selectpicker" name="target_currency"&gt;\n
+                    &lt;optgroup label="Common"&gt;\n
+                            &lt;option&gt;EUR&lt;/option&gt;\n
+                    &lt;/optgroup&gt;\n
+                    &lt;optgroup label="Others"&gt;\n
+                            &lt;option&gt;PEN&lt;/option&gt;\n
+                    &lt;/optgroup&gt;\n
+            &lt;/select&gt;\n
+    &lt;/div&gt;\n
+    &lt;input type="submit" name="name" class="btn btn-primary" value="Convert"/&gt;\n
+\n
+&lt;/div&gt;\n
+\n
+&lt;/form&gt;&lt;/div&gt;\n
+' contains "&lt;leged&gt;".
+
+/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php:16
+</failure>
+      </testcase>
+      <testcase name="test_method_404" class="Main_test" classname="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="19" assertions="1" time="0.014251"/>
+      <testcase name="test_APPPATH" class="Main_test" classname="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="25" assertions="1" time="0.010393"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

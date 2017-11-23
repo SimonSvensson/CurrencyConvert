@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="mainview.php" path="/views">
+    <totals>
+      <lines total="42" comments="0" code="42" executable="2" executed="2" percent="100.00"/>
+      <methods count="0" tested="0" percent="0"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="0" tested="0" percent="0"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <coverage>
+      <line nr="10">
+        <covered by="Welcome_test::test_index"/>
+      </line>
+      <line nr="42">
+        <covered by="Welcome_test::test_index"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_INLINE_HTML">&lt;link href="</token>
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">base_url</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'assets/css/bootstrap.min.css'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+        <token name="T_INLINE_HTML">" rel="stylesheet"&gt;</token>
+      </line>
+      <line no="2">
+        <token name="T_INLINE_HTML">&lt;link href="</token>
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">base_url</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'assets/css/bootstrap-select.css'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+        <token name="T_INLINE_HTML">" rel="stylesheet"&gt;</token>
+      </line>
+      <line no="3">
+        <token name="T_INLINE_HTML">&lt;script type="text/javascript" src="</token>
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">base_url</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'assets/js/jquery-3.2.1.min.js'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+        <token name="T_INLINE_HTML">"&gt;&lt;/script&gt;</token>
+      </line>
+      <line no="4">
+        <token name="T_INLINE_HTML">&lt;script type="text/javascript" src="</token>
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">base_url</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'assets/js/bootstrap.min.js'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+        <token name="T_INLINE_HTML">"&gt;&lt;/script&gt;</token>
+      </line>
+      <line no="5">
+        <token name="T_INLINE_HTML">&lt;script type="text/javascript" src="</token>
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">base_url</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'assets/js/bootstrap-select.min.js'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+        <token name="T_INLINE_HTML">"&gt;&lt;/script&gt;</token>
+      </line>
+      <line no="6"/>
+      <line no="7">
+        <token name="T_INLINE_HTML">&lt;div class="container"&gt;</token>
+      </line>
+      <line no="8"/>
+      <line no="9">
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">form_open</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'class="form-inline"'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+      </line>
+      <line no="10">
+        <token name="T_INLINE_HTML">&lt;/br&gt;</token>
+      </line>
+      <line no="11">
+        <token name="T_INLINE_HTML">&lt;legend&gt;Currency Converter&lt;/legend&gt;</token>
+      </line>
+      <line no="12">
+        <token name="T_INLINE_HTML">&lt;/br&gt;</token>
+      </line>
+      <line no="13"/>
+      <line no="14">
+        <token name="T_INLINE_HTML">&lt;div style="margin-left:30%;margin-top:20px;" &gt;</token>
+      </line>
+      <line no="15"/>
+      <line no="16">
+        <token name="T_INLINE_HTML">    &lt;div class="form-group"&gt;</token>
+      </line>
+      <line no="17">
+        <token name="T_INLINE_HTML">            &lt;input type="text" name="source" class="form-control" /&gt;</token>
+      </line>
+      <line no="18">
+        <token name="T_INLINE_HTML">            &lt;select class="selectpicker" name="source_currency"&gt;</token>
+      </line>
+      <line no="19">
+        <token name="T_INLINE_HTML">                    &lt;optgroup label="Common"&gt;</token>
+      </line>
+      <line no="20">
+        <token name="T_INLINE_HTML">                            &lt;option&gt;EUR&lt;/option&gt;</token>
+      </line>
+      <line no="21">
+        <token name="T_INLINE_HTML">                    &lt;/optgroup&gt;</token>
+      </line>
+      <line no="22">
+        <token name="T_INLINE_HTML">                    &lt;optgroup label="Others"&gt;</token>
+      </line>
+      <line no="23">
+        <token name="T_INLINE_HTML">                            &lt;option&gt;PEN&lt;/option&gt;</token>
+      </line>
+      <line no="24">
+        <token name="T_INLINE_HTML">                    &lt;/optgroup&gt;</token>
+      </line>
+      <line no="25">
+        <token name="T_INLINE_HTML">            &lt;/select&gt;</token>
+      </line>
+      <line no="26"/>
+      <line no="27">
+        <token name="T_INLINE_HTML">            &lt;input type="text" name="target" class="form-control" /&gt;</token>
+      </line>
+      <line no="28">
+        <token name="T_INLINE_HTML">            &lt;select class="selectpicker" name="target_currency"&gt;</token>
+      </line>
+      <line no="29">
+        <token name="T_INLINE_HTML">                    &lt;optgroup label="Common"&gt;</token>
+      </line>
+      <line no="30">
+        <token name="T_INLINE_HTML">                            &lt;option&gt;EUR&lt;/option&gt;</token>
+      </line>
+      <line no="31">
+        <token name="T_INLINE_HTML">                    &lt;/optgroup&gt;</token>
+      </line>
+      <line no="32">
+        <token name="T_INLINE_HTML">                    &lt;optgroup label="Others"&gt;</token>
+      </line>
+      <line no="33">
+        <token name="T_INLINE_HTML">                            &lt;option&gt;PEN&lt;/option&gt;</token>
+      </line>
+      <line no="34">
+        <token name="T_INLINE_HTML">                    &lt;/optgroup&gt;</token>
+      </line>
+      <line no="35">
+        <token name="T_INLINE_HTML">            &lt;/select&gt;</token>
+      </line>
+      <line no="36">
+        <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+      </line>
+      <line no="37">
+        <token name="T_INLINE_HTML">    &lt;input type="submit" name="name" class="btn btn-primary" value="Convert"/&gt;</token>
+      </line>
+      <line no="38"/>
+      <line no="39">
+        <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+      </line>
+      <line no="40"/>
+      <line no="41">
+        <token name="T_OPEN_TAG">&lt;?php </token>
+        <token name="T_ECHO">echo</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">form_close</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLOSE_TAG">?&gt;</token>
+      </line>
+      <line no="42">
+        <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+      </line>
+      <line no="43"/>
+    </source>
+  </file>
+</phpunit>

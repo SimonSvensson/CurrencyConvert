@@ -20,8 +20,8 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('hello');
+		$this->load->view('mainview');
 
-
+		// https://openexchangerates.org/api/latest.json?app_id=55cabee23e6047d1b32513c93d7fb40c
 	}
 }

@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="Main.php" path="/controllers">
+    <totals>
+      <lines total="27" comments="15" code="12" executable="2" executed="2" percent="100.00"/>
+      <methods count="1" tested="1" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="Main" start="4" executable="2" executed="2" crap="1">
+      <package full="" name="" sub="" category=""/>
+      <namespace name=""/>
+      <method name="index" signature="index()" start="21" end="26" crap="1" executable="2" executed="2" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="23">
+        <covered by="Welcome_test::test_index"/>
+      </line>
+      <line nr="26">
+        <covered by="Welcome_test::test_index"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_STRING">defined</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'BASEPATH'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LOGICAL_OR">OR</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXIT">exit</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'No direct script access allowed'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="3"/>
+      <line no="4">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Main</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">CI_Controller</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="5"/>
+      <line no="6">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="7">
+        <token name="T_DOC_COMMENT">	 * Index Page for this controller.</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT">	 *</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT">	 * Maps to the following URL</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT">	 * 		http://example.com/index.php/welcome</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT">	 *	- or -</token>
+      </line>
+      <line no="12">
+        <token name="T_DOC_COMMENT">	 * 		http://example.com/index.php/welcome/index</token>
+      </line>
+      <line no="13">
+        <token name="T_DOC_COMMENT">	 *	- or -</token>
+      </line>
+      <line no="14">
+        <token name="T_DOC_COMMENT">	 * Since this controller is set as the default controller in</token>
+      </line>
+      <line no="15">
+        <token name="T_DOC_COMMENT">	 * config/routes.php, it's displayed at http://example.com/</token>
+      </line>
+      <line no="16">
+        <token name="T_DOC_COMMENT">	 *</token>
+      </line>
+      <line no="17">
+        <token name="T_DOC_COMMENT">	 * So any other public methods not prefixed with an underscore will</token>
+      </line>
+      <line no="18">
+        <token name="T_DOC_COMMENT">	 * map to /index.php/welcome/&lt;method_name&gt;</token>
+      </line>
+      <line no="19">
+        <token name="T_DOC_COMMENT">	 * @see https://codeigniter.com/user_guide/general/urls.html</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT">	 */</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">index</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">		</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">load</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">view</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'mainview'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="24"/>
+      <line no="25"/>
+      <line no="26">
+        <token name="T_WHITESPACE">	</token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="27">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="28"/>
+    </source>
+  </file>
+</phpunit>

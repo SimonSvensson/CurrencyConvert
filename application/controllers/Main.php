@@ -18,10 +18,19 @@ class Main extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('mainview');
-
-		// https://openexchangerates.org/api/latest.json?app_id=55cabee23e6047d1b32513c93d7fb40c
+	public function index(){
+                
+                $this->load->model('Currency');
+                
+                $this->Currency->update_currencies();
+                
+                $data['common'] = $this->Currency->get_common();
+                $data['currencies'] = $this->Currency->get_names(true);
+                
+                $this->load->view('header');
+		$this->load->view('main_content', $data);
+                $this->load->view('footer');
+                
 	}
+
 }

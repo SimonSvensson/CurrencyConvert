@@ -1,24 +1,30 @@
 <?php
-/**
- * Part of ci-phpunit-test
- *
- * @author     Kenji Suzuki <https://github.com/kenjis>
- * @license    MIT License
- * @copyright  2015 Kenji Suzuki
- * @link       https://github.com/kenjis/ci-phpunit-test
- */
 
 class Main_test extends TestCase
 {
 	public function test_index()
 	{
 		$output = $this->request('GET', 'main/index');
-		$this->assertContains('<leged>', $output);
+		$this->assertContains('<legend>', $output);
+	}
+
+	public function test_bootstrap()
+	{
+		$output = $this->request('GET', 'main/index');
+		$expected = 'assets/css/bootstrap.min.css';
+		$this->assertContains($expected, $output);
+	}
+
+	public function test_bootstrap_select()
+	{
+		$output = $this->request('GET', 'main/index');
+		$expected = "assets/css/bootstrap-select.css";
+		$this->assertContains($expected, $output);
 	}
 
 	public function test_method_404()
 	{
-		$this->request('GET', 'welcome/method_not_exist');
+		$this->request('GET', 'main/method_not_exist');
 		$this->assertResponseCode(404);
 	}
 

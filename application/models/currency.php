@@ -19,7 +19,7 @@ class Currency extends CI_Model {
         return $result;
     }
     
-    /* gets and returns json with currency names */
+    /* gets and returns JSON with currency names */
     function get_names($as_array = false){
         
         $json = file_get_contents('https://openexchangerates.org/api/currencies.json');
@@ -27,7 +27,7 @@ class Currency extends CI_Model {
         return $as_array ? json_decode($json, true) : $json;
     }
     
-    /* gets and returns json with rates */
+    /* gets and returns JSON with rates */
     function get_currency_rates(){
         
         $currency_rates = json_decode(file_get_contents('https://openexchangerates.org/api/latest.json?app_id='.$this->app_id));
@@ -35,7 +35,7 @@ class Currency extends CI_Model {
         return json_encode($currency_rates->rates);
     }
     
-    /* gets and returns json with rates and currency names */
+    /* gets and returns JSON with rates and currency names */
     function get_combined(){
         
         $all = Array();
@@ -54,9 +54,10 @@ class Currency extends CI_Model {
     
     /* gets and returns the stored rate for the currency from the database */ 
     function get_rate($iso){
-        $query = $this->db->get_where('currencies', Array('iso_4217' => $iso), 1);
-    
-        return Array($iso, $query->result()->rate);
+        $query = $this->db->get_where('currencies', Array('iso_4217' => $iso));
+        $result = $query->result();
+        
+        return $result[0]->rate;
     }
     
     /* fetches and inserts/updates the currencies in the db */
@@ -77,5 +78,22 @@ class Currency extends CI_Model {
                 $this->db->insert('currencies', $data);
             }
         }
+    }
+    
+    /* gets all the currencies from the db as a JSON */
+    function get_all_currencies(){
+        
+        $query = $this->db->get('currencies');
+        
+        return json_encode($query->result());
+    }
+    
+    /* calculates and returns the correct conversion factor */ 
+    function conversion_factor($sourceCurrency, $targetCurrency){
+        $source = $this->get_rate($sourceCurrency);
+        $target = $this->get_rate($targetCurrency);
+        
+        return json_encode(Array('factor' => $target/$source));
+        
     }
 }

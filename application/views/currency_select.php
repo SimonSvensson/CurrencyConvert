@@ -1,3 +1,4 @@
+<select name="<?php echo $name ?>" id="<?php echo $name ?>" class="selectpicker" data-size="10"  data-live-search="true" data-width="fit" data-dropup-auto="false">
 <optgroup label="Common">
     <?php
     foreach($common AS $currency) :
@@ -18,3 +19,4 @@
     endforeach;
     ?>
 </optgroup>
+</select>

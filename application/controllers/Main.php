@@ -10,7 +10,6 @@ class Main extends CI_Controller {
                 //$data['currencies'] = $this->Currency->get_names(true);
                 
                 $this->load->view('header');
-		//$this->load->view('main_content', $data);
                 $this->load->view('main_content');
                 $this->load->view('footer');
                 

@@ -34,9 +34,11 @@ class Currency extends CI_Model {
             return $as_array ? $result : json_encode($result);
             
         }else{
+            log_message('error', 'Failed to fetch currency names from database. Trying to get external update');
             if($this->update_currencies()){
                 return $this->get_names($as_array);
             }else{
+                log_message('error', 'Could not get external update of the currencies');
                 return json_encode(Array('error' => 'Query to DB returned an empty result, and could not get external update.'));
             }
         }
@@ -116,8 +118,18 @@ class Currency extends CI_Model {
     function get_all_currencies(){
         
         $query = $this->db->get('currencies');
+        if($query->num_rows() > 0){
+            return json_encode($query->result());
+        }else{
+            log_message('error', 'Failed to fetch currency rates from DB. No currencies in DB? Trying to get external update');
+            if($this->update_currencies()){
+                return $this->get_all_currencies();
+            }else{
+                log_message('error', 'Could not get external update of the currencies');
+                return json_encode(Array('error' => 'Query to DB returned an empty result, and could not get external update.'));
+            }
+        }
         
-        return json_encode($query->result());
     }
     
     /* calculates and returns the correct conversion factor */ 

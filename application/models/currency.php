@@ -120,7 +120,9 @@ class Currency extends CI_Model {
     /* gets all the currencies from the db as a JSON */
     function get_all_currencies(){
         
+        $this->db->order_by('iso_4217', 'ASC');
         $query = $this->db->get('currencies');
+        
         if($query->num_rows() > 0){
             return json_encode($query->result());
         }else{
@@ -156,12 +158,10 @@ class Currency extends CI_Model {
         
         if( $iso == 'everything'){
             $this->db->empty_table('currencies');
-            return json_encode(Array('success' => ($this->db->affected_rows() > 0 ? true : false) )); 
         }else{
             $this->db->where('iso_4217', $iso);
             $this->db->delete('currencies');
-            return json_encode(Array('success' => ($this->db->affected_rows() > 0 ? true : false) ));
         }
-        
+        return json_encode(Array('success' => ($this->db->affected_rows() > 0 ? true : false) )); 
     }
 }

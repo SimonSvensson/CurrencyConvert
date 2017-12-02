@@ -39,6 +39,7 @@ class Ajax extends CI_Controller {
         }
         
         public function clear_currency($iso = NULL){
+            
             $data['data'] = $this->Currency->clear_currency($iso);
             
             $this->load->view('ajax', $data);

@@ -85,9 +85,12 @@ class Currency extends CI_Model {
     /* gets and returns the stored rate for the currency from the database */ 
     function get_rate($iso, $as_json = false){
         
-        $query = $this->db->get_where('currencies', Array('iso_4217' => $iso));
-        $result = $query->first_row();
+        $result = (object) ['rate' => 0];
         
+        $query = $this->db->get_where('currencies', Array('iso_4217' => $iso));
+        if($query->num_rows() > 0 ){
+            $result = $query->first_row();
+        }
         return $as_json ? json_encode( Array( 'rate' => $result->rate ) ) : $result->rate;
     }
     
@@ -136,8 +139,15 @@ class Currency extends CI_Model {
     function conversion_factor($sourceCurrency, $targetCurrency){
         $source = $this->get_rate($sourceCurrency);
         $target = $this->get_rate($targetCurrency);
+        if($source > 0){
+            return json_encode(Array('factor' => $target/$source));
+        }else{
+            log_message('error', 'Could not get correct rate for '.$sourceCurrency);
+            return json_encode(Array('error' => 'Could not get correct rate for the currencies<br>'
+                . 'Are the source and target currencies selected?<br>'
+                . 'Try to update currencies or refreshing if there are no available.'));
+        }
         
-        return json_encode(Array('factor' => $target/$source));
         
     }
     

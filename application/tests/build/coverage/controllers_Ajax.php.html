@@ -122,7 +122,7 @@
      </tr>
 
      <tr>
-      <td class="success" colspan="4">&nbsp;<a href="#20">get_rate($currency)</a></td>
+      <td class="success" colspan="4">&nbsp;<a href="#20">get_rate($currency = NULL)</a></td>
       <td class="success big">       <div class="progress progress-success" style="width: 100px;">
         <div class="bar" style="width: 100.00%;"></div>
        </div>
@@ -139,7 +139,7 @@
      </tr>
 
      <tr>
-      <td class="success" colspan="4">&nbsp;<a href="#27">conversion_factor($source_currency, $target_currency)</a></td>
+      <td class="success" colspan="4">&nbsp;<a href="#27">conversion_factor($source_currency = NULL, $target_currency = NULL)</a></td>
       <td class="success big">       <div class="progress progress-success" style="width: 100px;">
         <div class="bar" style="width: 100.00%;"></div>
        </div>
@@ -173,7 +173,7 @@
      </tr>
 
      <tr>
-      <td class="danger" colspan="4">&nbsp;<a href="#41">clear_currency($iso)</a></td>
+      <td class="danger" colspan="4">&nbsp;<a href="#41">clear_currency($iso = NULL)</a></td>
       <td class="danger big">       <div class="progress progress-danger" style="width: 100px;">
         <div class="bar" style="width: 0.00%;"></div>
        </div>
@@ -230,14 +230,14 @@
      <tr class="danger"><td><div align="right"><a name="17"></a><a href="#17">17</a></div></td><td class="codeLine">            $this-&gt;load-&gt;view('ajax', $data);</td></tr>
      <tr class="danger"><td><div align="right"><a name="18"></a><a href="#18">18</a></div></td><td class="codeLine">        }</td></tr>
      <tr><td><div align="right"><a name="19"></a><a href="#19">19</a></div></td><td class="codeLine"></td></tr>
-     <tr><td><div align="right"><a name="20"></a><a href="#20">20</a></div></td><td class="codeLine">        public function get_rate($currency){</td></tr>
+     <tr><td><div align="right"><a name="20"></a><a href="#20">20</a></div></td><td class="codeLine">        public function get_rate($currency = NULL){</td></tr>
      <tr><td><div align="right"><a name="21"></a><a href="#21">21</a></div></td><td class="codeLine"></td></tr>
      <tr class="success popin" data-title="1 test covers line 22" data-content="&lt;ul&gt;&lt;li class=&quot;success&quot;&gt;Ajax_test::test_get_rate&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="22"></a><a href="#22">22</a></div></td><td class="codeLine">            $data['data'] = $this-&gt;Currency-&gt;get_rate($currency, true);</td></tr>
      <tr><td><div align="right"><a name="23"></a><a href="#23">23</a></div></td><td class="codeLine"></td></tr>
      <tr class="success popin" data-title="1 test covers line 24" data-content="&lt;ul&gt;&lt;li class=&quot;success&quot;&gt;Ajax_test::test_get_rate&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="24"></a><a href="#24">24</a></div></td><td class="codeLine">            $this-&gt;load-&gt;view('ajax', $data);</td></tr>
      <tr class="success popin" data-title="1 test covers line 25" data-content="&lt;ul&gt;&lt;li class=&quot;success&quot;&gt;Ajax_test::test_get_rate&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="25"></a><a href="#25">25</a></div></td><td class="codeLine">        }</td></tr>
      <tr><td><div align="right"><a name="26"></a><a href="#26">26</a></div></td><td class="codeLine"></td></tr>
-     <tr><td><div align="right"><a name="27"></a><a href="#27">27</a></div></td><td class="codeLine">        public function conversion_factor($source_currency, $target_currency){</td></tr>
+     <tr><td><div align="right"><a name="27"></a><a href="#27">27</a></div></td><td class="codeLine">        public function conversion_factor($source_currency = NULL, $target_currency = NULL){</td></tr>
      <tr><td><div align="right"><a name="28"></a><a href="#28">28</a></div></td><td class="codeLine"></td></tr>
      <tr class="success popin" data-title="1 test covers line 29" data-content="&lt;ul&gt;&lt;li class=&quot;success&quot;&gt;Ajax_test::test_conversion_factor&lt;/li&gt;&lt;/ul&gt;" data-placement="bottom" data-html="true"><td><div align="right"><a name="29"></a><a href="#29">29</a></div></td><td class="codeLine">            $data['data'] = $this-&gt;Currency-&gt;conversion_factor($source_currency, $target_currency);</td></tr>
      <tr><td><div align="right"><a name="30"></a><a href="#30">30</a></div></td><td class="codeLine"></td></tr>
@@ -251,7 +251,7 @@
      <tr class="danger"><td><div align="right"><a name="38"></a><a href="#38">38</a></div></td><td class="codeLine">            $this-&gt;load-&gt;view('ajax', $data);</td></tr>
      <tr class="danger"><td><div align="right"><a name="39"></a><a href="#39">39</a></div></td><td class="codeLine">        }</td></tr>
      <tr><td><div align="right"><a name="40"></a><a href="#40">40</a></div></td><td class="codeLine"></td></tr>
-     <tr><td><div align="right"><a name="41"></a><a href="#41">41</a></div></td><td class="codeLine">        public function clear_currency($iso){</td></tr>
+     <tr><td><div align="right"><a name="41"></a><a href="#41">41</a></div></td><td class="codeLine">        public function clear_currency($iso = NULL){</td></tr>
      <tr class="danger"><td><div align="right"><a name="42"></a><a href="#42">42</a></div></td><td class="codeLine">            $data['data'] = $this-&gt;Currency-&gt;clear_currency($iso);</td></tr>
      <tr><td><div align="right"><a name="43"></a><a href="#43">43</a></div></td><td class="codeLine"></td></tr>
      <tr class="danger"><td><div align="right"><a name="44"></a><a href="#44">44</a></div></td><td class="codeLine">            $this-&gt;load-&gt;view('ajax', $data);</td></tr>
@@ -292,7 +292,7 @@
      <span class="warning"><strong>Dead Code</strong></span>
     </p>
     <p>
-     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.2.7</a> using <a href="http://www.php.net/" target="_top">PHP 7.1.11</a> and <a href="http://phpunit.de/">PHPUnit 3.7.10</a> at Sat Dec 2 5:06:40 UTC 2017.</small>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 1.2.7</a> using <a href="http://www.php.net/" target="_top">PHP 7.1.11</a> and <a href="http://phpunit.de/">PHPUnit 3.7.10</a> at Sat Dec 2 20:38:52 UTC 2017.</small>
     </p>
    </footer>
   </div>

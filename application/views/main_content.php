@@ -4,9 +4,9 @@
 <legend>Currency Converter</legend>
 <br />
 
-<div id="error_messages" style="color: red;"></div>
 
-<div style="margin-left:30%;margin-top:20px; width:100%" class="form-inline" >
+
+<div style="margin-left:30%;margin-top:20px; width:70%" class="form-inline" >
 
     <label for="source_val">From</label><br />
     <input type="text" id="source_val" class="form-control curr_input" />
@@ -24,6 +24,7 @@
     </div>
 </div>
 <div id="spinner" style="height: 50px; width: 50px;float:center;"></div>
+<div id="error_messages" style="color: red;"></div>
 <br />
 
 <div id="stored_currencies" class="currency_container">

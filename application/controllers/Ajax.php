@@ -17,14 +17,14 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
-        public function get_rate($currency){
+        public function get_rate($currency = NULL){
             
             $data['data'] = $this->Currency->get_rate($currency, true);
             
             $this->load->view('ajax', $data);
         }
         
-        public function conversion_factor($source_currency, $target_currency){
+        public function conversion_factor($source_currency = NULL, $target_currency = NULL){
             
             $data['data'] = $this->Currency->conversion_factor($source_currency, $target_currency);
             
@@ -38,7 +38,7 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
-        public function clear_currency($iso){
+        public function clear_currency($iso = NULL){
             $data['data'] = $this->Currency->clear_currency($iso);
             
             $this->load->view('ajax', $data);

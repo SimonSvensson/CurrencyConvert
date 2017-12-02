@@ -67,16 +67,24 @@ function update_table(){
     
 function convert(){
     loading();
-    $.getJSON('/index.php/ajax/conversion_factor/'+$('#source_currency').val()+'/'+$('#target_currency').val(),
-        function(data){
-            
+    $.getJSON('/index.php/ajax/conversion_factor/'+$('#source_currency').val()+'/'+$('#target_currency').val(), function(data){
+        
+        if(data.error === undefined){
+        
+
             $('#target_val').val(
                     isNaN(parseFloat($('#source_val').val().replace(',','.')))
                         ? 0
-                        : parseFloat(parseFloat($('#source_val').val().replace(',','.')) * parseFloat(data.factor)).toFixed(2) );
+                        : parseFloat(parseFloat($('#source_val').val().replace(',','.')) * parseFloat(data.factor)).toFixed(2)
+            );
+        }else{
+            $('#error_messages').append('<p>'+data.error+'</p>');
+            console.log(data.error); 
+        }
+        finished_loading();
     });
     
-    finished_loading();
+    
 }
     
 function clear_inputs(){
@@ -134,6 +142,7 @@ function clear_all_currencies(){
 }
 
 function loading(){
+    $('#error_messages').html('');
     $('#spinner').html('<img src="/assets/img/loading_spinner.gif" style="height: 50px; width: 50px;">');
 }
 

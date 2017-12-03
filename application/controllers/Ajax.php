@@ -20,7 +20,7 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
-        
+        /* gets the rate of a currency */
         public function get_rate($currency = NULL){
             
             $data['data'] = $this->Currency->get_rate($currency, true);
@@ -52,13 +52,14 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
-        /* gets the data for the two selectboxes */
+        /* gets the data to be put in the selectboxes */
         public function selectboxes(){
             
             $common = $this->Currency->get_common();
             $currencies = $this->Currency->get_names();
             $result = Array();
             $errors = false;
+            
             if(!isset( json_encode($common)->error) ){
                 $result['common'] = $common;
             }else{

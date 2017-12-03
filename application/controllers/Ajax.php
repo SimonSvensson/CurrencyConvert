@@ -2,7 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ajax extends CI_Controller {
-    
+        
+        /* Gets and displays a JSON from the DB containing all saved currencies. */
 	public function all_currencies(){
   
             $data['data'] = $this->Currency->get_all_currencies();
@@ -10,12 +11,15 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
 	}
         
+        /* Gets updates all currencies from openexchangerates.org.
+         * The return is basically an ACK */
         public function update_currencies(){
             
             $data['data'] = $this->Currency->update_currencies();
             
             $this->load->view('ajax', $data);
         }
+        
         
         public function get_rate($currency = NULL){
             
@@ -24,6 +28,7 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
+        /* Gets the conversion factor for the two selected currencies */
         public function conversion_factor($source_currency = NULL, $target_currency = NULL){
             
             $data['data'] = $this->Currency->conversion_factor($source_currency, $target_currency);
@@ -31,6 +36,7 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
+        /* Removes all the currencies from the DB */
         public function wipe_currencies(){
             
             $data['data'] = $this->Currency->clear_currency('everything');
@@ -38,6 +44,7 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
+        /* Removes a currency from the DB */
         public function clear_currency($iso = NULL){
             
             $data['data'] = $this->Currency->clear_currency($iso);
@@ -45,6 +52,7 @@ class Ajax extends CI_Controller {
             $this->load->view('ajax', $data);
         }
         
+        /* gets the data for the two selectboxes */
         public function selectboxes(){
             
             $common = $this->Currency->get_common();
@@ -54,7 +62,7 @@ class Ajax extends CI_Controller {
             if(!isset( json_encode($common)->error) ){
                 $result['common'] = $common;
             }else{
-                $result['error'] = 'Could not load common currencies from DB';
+                $result['error'] = json_encode($common)->error;
                 $errors = true;
             }
             

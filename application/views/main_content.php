@@ -4,8 +4,6 @@
 <legend>Currency Converter</legend>
 <br />
 
-
-
 <div style="margin-left:30%;margin-top:20px; width:70%" class="form-inline" >
 
     <label for="source_val">From</label><br />

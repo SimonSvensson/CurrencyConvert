@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Currency extends CI_Model {
     
@@ -15,8 +16,13 @@ class Currency extends CI_Model {
         
         $this->db->order_by('id', 'ASC');
         $query = $this->db->get('common');
-        foreach($query->result() as $row){
-            $result[] = $row->iso_4217;
+        if($query->num_rows() > 0){
+            foreach($query->result() as $row){
+                $result[] = $row->iso_4217;
+            }
+        }else{
+            log_message('error', 'Failed to load common currencies from the DB');
+            $result['error'] = 'Failed to load common currencies from the DB';
         }
         return $as_array ? $result : json_encode($result);
     }
@@ -114,7 +120,8 @@ class Currency extends CI_Model {
             }
         }
         
-        return true;
+        /* no return, other than an ACK */
+        return json_encode(Array('success' => true));
     }
     
     /* gets all the currencies from the db as a JSON */
@@ -134,7 +141,6 @@ class Currency extends CI_Model {
                 return json_encode(Array('error' => 'Query to DB returned an empty result, and could not get external update.'));
             }
         }
-        
     }
     
     /* calculates and returns the correct conversion factor */ 

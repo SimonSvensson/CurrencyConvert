@@ -77,34 +77,56 @@ function update_currencies(){
     });
 }
 
+/* tells the server to delete all the currencies from the database */
 function clear_all_currencies(){
     
     ajax_request('/index.php/ajax/wipe_currencies', function(){
+        /* also remove all the options that we have in the selectboxes
+         * and all the entries in the table.
+         */
         $('.selectpicker').find('option').remove();
         $('.selectpicker').selectpicker('refresh');
         $('#currency_table tbody tr').remove();
     });
 }
 
+/* things to do before the ajax request */
 function loading(){
+    /* remove all the error messages */
     $('#error_messages').html('');
+    /* show the "loading spinner" */
     $('#spinner').html('<img src="/assets/img/loading_spinner.gif" style="height: 50px; width: 50px;">');
 }
 
+/* things to do post loading */
 function finished_loading(){
+    /* remove the spinner */
     $('#spinner').html('');
 }
 
+/* Wrapper function to handle errors and settings of the ajax requests,
+ * to make the actual ajax requests easier */
 function ajax_request(url, success_func){
     
-    loading();
+    loading(); /* we started loading a page */
     
-    $.ajax({ dataType: "json", timeout: 4000, url: url, success: function(data){
+    $.ajax({ dataType: "json", timeout: 4000, url: url, success: function(data){ /* the actual ajax request */
         if(data.error === undefined){
+            /* if there are no data errors, execute the anonymous function */
             success_func(data);
         }else{
+            /* otherwise, show the error */
             $('#error_messages').append('<p>'+data.error+'</p>');
         }
-        finished_loading();
+        finished_loading(); /* loading of the request is finished */
+        
+    }, error: function(request, status, error){
+        /* if there are any network errors, they are handled in this function */
+        if(request.status == 500){ /* error 500 is probably the most common, so we set a special message for that */
+            $('#error_messages').append('<p>Network error: Could not connect to openexchagerates.org</p>');
+        }else{ /* for all other network errors, we print their status code and the status text */
+            $('#error_messages').append('<p>Network error: '+request.status+' '+request.statusText+'</p>');
+        }
+        finished_loading(); /* loading of the request is finished */
     }});
 }

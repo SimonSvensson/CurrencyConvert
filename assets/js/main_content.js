@@ -3,34 +3,36 @@ $(document).ready(function(){
    update_selectboxes();
    update_table();
 });
-    
+
+/* clears the selectboxes and reloads them with all the currencies from the database */
 function update_selectboxes(){
     ajax_request('/index.php/ajax/selectboxes', function(data){
         var common = JSON.parse(data.common);
         var currencies = JSON.parse(data.currencies);
 
-        //remove all the options
+        /* remove all the options */
         $('.selectpicker').find('option').remove();
 
 
-        // add the common currencies
+        /* add the common currencies to their option group */
         for(var i  = 0; i < common.length ; i++){
             if(currencies[common[i]] !== undefined){
                 $('.opt_common').append( '<option data-tokens="'+currencies[common[i]]+' '+common[i]+'" data-subtext="'+currencies[common[i]]+'" value="'+common[i]+'">'+common[i]+'</option>' );
             }
         }
 
-        // add the rest of the currencies
+        /* add the rest of the currencies to the other option group */
         $.each(currencies, function(iso, name){
             if($.inArray(iso, common) < 0){
                 $('.opt_others').append('<option data-tokens="'+name+' '+iso+'" data-subtext="'+name+'" value="'+iso+'">'+iso+'</option>');
             }
         });
 
-        $('.selectpicker').selectpicker('refresh');
+        $('.selectpicker').selectpicker('refresh'); /* refresh to make the changes take effect */
     });
 }
-    
+
+/* clears the table from currencies, and reloads it with all the currencies from the database */
 function update_table(){
     ajax_request('/index.php/ajax/all_currencies', function(data){
         $('#currency_table tbody tr').remove();
@@ -47,22 +49,27 @@ function update_table(){
         }
     });
 }
-    
+
+/* do the actual conversion.
+ * Gets the conversion factor from the server,
+ * and multiplies the factor with the user specified value */
 function convert(){
     ajax_request('/index.php/ajax/conversion_factor/'+$('#source_currency').val()+'/'+$('#target_currency').val(), function(data){
         $('#target_val').val(
-                    isNaN(parseFloat($('#source_val').val().replace(',','.')))
+                    isNaN(parseFloat($('#source_val').val().replace(',','.'))) /* set the output to 0 if the input is not a number */
                         ? 0
                         : parseFloat(parseFloat($('#source_val').val().replace(',','.')) * parseFloat(data.factor)).toFixed(2)
         );
     });
 }
-    
+
+/* clears the two textboxes */
 function clear_inputs(){
     $('#source_val').val('');
     $('#target_val').val('');
 }
 
+/* remove a currency from the database */
 function clear_currency(iso){
     ajax_request('/index.php/ajax/clear_currency/'+iso, function(data){
         update_selectboxes();
@@ -70,6 +77,8 @@ function clear_currency(iso){
     });
 }
 
+/* tell the server to get new rates from openexchangerates.org,
+ * and update the database with the new rates */
 function update_currencies(){
     ajax_request('/index.php/ajax/update_currencies', function(){
         update_selectboxes();
@@ -77,13 +86,12 @@ function update_currencies(){
     });
 }
 
-/* tells the server to delete all the currencies from the database */
+/* tell the server to delete all the currencies from the database */
 function clear_all_currencies(){
     
     ajax_request('/index.php/ajax/wipe_currencies', function(){
         /* also remove all the options that we have in the selectboxes
-         * and all the entries in the table.
-         */
+         * and all the entries in the table. */
         $('.selectpicker').find('option').remove();
         $('.selectpicker').selectpicker('refresh');
         $('#currency_table tbody tr').remove();

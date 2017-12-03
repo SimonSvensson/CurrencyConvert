@@ -8,7 +8,8 @@ class Currency extends CI_Model {
         parent::__construct();
     }
     
-    var $app_id = '55cabee23e6047d1b32513c93d7fb40c';
+    var $app_id = '55cabee23e6047d1b32513c93d7fb40c'; /* app id for openexchangerates.org */
+    
     
     /* gets and returns an array with the most common currencies */
     /* (common currencies are predefined in the database) */
@@ -16,7 +17,8 @@ class Currency extends CI_Model {
         
         $this->db->order_by('id', 'ASC');
         $query = $this->db->get('common');
-        if($query->num_rows() > 0){
+        
+        if($query->num_rows() > 0){  /* checks that we got something from th DB */
             foreach($query->result() as $row){
                 $result[] = $row->iso_4217;
             }
@@ -27,13 +29,15 @@ class Currency extends CI_Model {
         return $as_array ? $result : json_encode($result);
     }
     
+    
     /* gets and returns JSON with currency names from DB */
     function get_names($as_array = false){
         
         $this->db->order_by('iso_4217', 'ASC');
         $this->db->select('iso_4217, name');
         $query = $this->db->get('currencies');
-        if($query->num_rows() > 0){
+        
+        if($query->num_rows() > 0){ /* checks that we got something from the DB */
             foreach($query->result() as $row){
                 $result[$row->iso_4217] = $row->name;
             }
@@ -50,6 +54,7 @@ class Currency extends CI_Model {
         }
     }
     
+    
     /* gets and returns JSON with currency names from OEX */
     function get_online_names(){
         $this->load->library('PHPRequests');
@@ -58,6 +63,7 @@ class Currency extends CI_Model {
         
         return $json->body;
     }
+    
     
     /* gets and returns JSON with rates from OEX */
     function get_online_currency_rates(){
@@ -71,7 +77,8 @@ class Currency extends CI_Model {
         return json_encode($currency_rates->rates);
     }
     
-    /* gets and returns JSON with rates and currency names */
+    
+    /* gets and returns an array with rates and currency names */
     function get_combined(){
         
         $all = Array();
@@ -83,22 +90,26 @@ class Currency extends CI_Model {
             $all[$iso]['rate'] = $rate;
             $all[$iso]['name'] = $currency_names->$iso;
         }
-        
-        
+
         return $all;
     }
+    
     
     /* gets and returns the stored rate for the currency from the database */ 
     function get_rate($iso, $as_json = false){
         
-        $result = (object) ['rate' => 0];
+        $result = (object) ['rate' => 0]; /* 0 will be the return value if there
+                                           * is some DB error */
         
         $query = $this->db->get_where('currencies', Array('iso_4217' => $iso));
         if($query->num_rows() > 0 ){
             $result = $query->first_row();
         }
+        
+        /* return it as a json if specified, otherwise as a string */
         return $as_json ? json_encode( Array( 'rate' => $result->rate ) ) : $result->rate;
     }
+    
     
     /* fetches and inserts/updates the currencies in the db */
     function update_currencies(){
@@ -124,6 +135,7 @@ class Currency extends CI_Model {
         return json_encode(Array('success' => true));
     }
     
+    
     /* gets all the currencies from the db as a JSON */
     function get_all_currencies(){
         
@@ -143,11 +155,13 @@ class Currency extends CI_Model {
         }
     }
     
+    
     /* calculates and returns the correct conversion factor */ 
     function conversion_factor($sourceCurrency, $targetCurrency){
         $source = $this->get_rate($sourceCurrency);
         $target = $this->get_rate($targetCurrency);
-        if($source > 0){
+        
+        if($source > 0){ /* we don't want to divide by 0 */
             return json_encode(Array('factor' => $target/$source));
         }else{
             log_message('error', 'Could not get correct rate for '.$sourceCurrency);
@@ -159,7 +173,8 @@ class Currency extends CI_Model {
         
     }
     
-    /* clears the selected currencies in the table */
+    
+    /* deletes the selected currency or currencies from the DB */
     function clear_currency($iso){
         
         if( $iso == 'everything'){

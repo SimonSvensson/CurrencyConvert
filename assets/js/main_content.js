@@ -2,7 +2,15 @@ $(document).ready(function(){
    loading();
    update_selectboxes();
    update_table();
+   
+   /* enable button events */
+   $("#btn_convert").on("click", convert);
+   $("#btn_clear").on("click", clear_inputs);
+   $("#btn_update").on("click", update_currencies);
+   $("#btn_wipe").on("click", clear_all_currencies);
 });
+
+
 
 /* clears the selectboxes and reloads them with all the currencies from the database */
 function update_selectboxes(){

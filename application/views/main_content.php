@@ -17,8 +17,8 @@
     <?php $this->view('currency_select', Array('name' => 'target_currency')); ?>
     <br /><br />
     <div>
-    <input type="submit" name="name" class="btn btn-primary" value="Convert" onclick="convert()"/>
-    <input type="button" name="clear" class="btn btn-default" value="Clear inputs" onclick="clear_inputs()" />
+    <input type="submit" name="convert" id="btn_convert" class="btn btn-primary" value="Convert" />
+    <input type="button" name="clear" id="btn_clear" class="btn btn-default" value="Clear inputs" />
     </div>
 </div>
 <div id="spinner" style="height: 50px; width: 50px;float:center;"></div>
@@ -27,8 +27,8 @@
 
 <div id="stored_currencies" class="currency_container">
     <div class="form-inline" style="float:right;">
-        <input type="button" class="btn btn-success" value="Update Rates" onclick="update_currencies()" />
-        <input type="button" class="btn btn-danger" value="Delete All" onclick="clear_all_currencies()" />
+        <input type="button" id="btn_update" class="btn btn-success" value="Update Rates" />
+        <input type="button" id="btn_wipe" class="btn btn-danger" value="Delete All" />
     </div>
     <table id="currency_table" class="table table-striped">
         <thead>

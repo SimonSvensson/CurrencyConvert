@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="18" assertions="18" failures="0" errors="0" time="1.688179">
-    <testsuite name="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" fullPackage="Ajax" tests="5" assertions="5" failures="0" errors="0" time="0.162835">
-      <testcase name="test_all_currencies" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="5" assertions="1" time="0.041220"/>
-      <testcase name="test_get_rate" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="10" assertions="1" time="0.023823"/>
-      <testcase name="test_conversion_factor" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="15" assertions="1" time="0.034244"/>
-      <testcase name="test_selectboxes_common" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="20" assertions="1" time="0.034798"/>
-      <testcase name="test_selectboxes_currencies" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="25" assertions="1" time="0.028750"/>
+  <testsuite name="" tests="18" assertions="18" failures="0" errors="0" time="1.634359">
+    <testsuite name="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" fullPackage="Ajax" tests="5" assertions="5" failures="0" errors="0" time="0.188547">
+      <testcase name="test_all_currencies" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="5" assertions="1" time="0.070193"/>
+      <testcase name="test_get_rate" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="10" assertions="1" time="0.024794"/>
+      <testcase name="test_conversion_factor" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="15" assertions="1" time="0.027081"/>
+      <testcase name="test_selectboxes_common" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="20" assertions="1" time="0.031744"/>
+      <testcase name="test_selectboxes_currencies" class="Ajax_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Ajax_test.php" line="25" assertions="1" time="0.034735"/>
     </testsuite>
-    <testsuite name="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" fullPackage="Main" tests="5" assertions="5" failures="0" errors="0" time="0.101156">
-      <testcase name="test_index" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="5" assertions="1" time="0.026904"/>
-      <testcase name="test_bootstrap" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="11" assertions="1" time="0.026924"/>
-      <testcase name="test_bootstrap_select" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="18" assertions="1" time="0.019429"/>
-      <testcase name="test_method_404" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="25" assertions="1" time="0.023030"/>
-      <testcase name="test_APPPATH" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="31" assertions="1" time="0.004869"/>
+    <testsuite name="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" fullPackage="Main" tests="5" assertions="5" failures="0" errors="0" time="0.092008">
+      <testcase name="test_index" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="5" assertions="1" time="0.026053"/>
+      <testcase name="test_bootstrap" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="11" assertions="1" time="0.022958"/>
+      <testcase name="test_bootstrap_select" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="18" assertions="1" time="0.022900"/>
+      <testcase name="test_method_404" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="25" assertions="1" time="0.014951"/>
+      <testcase name="test_APPPATH" class="Main_test" file="/Applications/MAMP/htdocs/application/tests/controllers/Main_test.php" line="31" assertions="1" time="0.005146"/>
     </testsuite>
-    <testsuite name="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" fullPackage="currency" tests="8" assertions="8" failures="0" errors="0" time="1.424187">
-      <testcase name="test_get_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="12" assertions="1" time="0.023389"/>
-      <testcase name="test_negative_get_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="19" assertions="1" time="0.029201"/>
-      <testcase name="test_get_common" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="26" assertions="1" time="0.023572"/>
-      <testcase name="test_negative_get_common" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="32" assertions="1" time="0.019108"/>
-      <testcase name="test_get_rate" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="38" assertions="1" time="0.020391"/>
-      <testcase name="test_get_rate_json" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="43" assertions="1" time="0.016334"/>
-      <testcase name="test_get_online_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="49" assertions="1" time="0.829078"/>
-      <testcase name="test_negative_get_online_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="56" assertions="1" time="0.463114"/>
+    <testsuite name="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" fullPackage="currency" tests="8" assertions="8" failures="0" errors="0" time="1.353804">
+      <testcase name="test_get_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="12" assertions="1" time="0.022694"/>
+      <testcase name="test_negative_get_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="19" assertions="1" time="0.030237"/>
+      <testcase name="test_get_common" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="26" assertions="1" time="0.018015"/>
+      <testcase name="test_negative_get_common" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="32" assertions="1" time="0.017229"/>
+      <testcase name="test_get_rate" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="38" assertions="1" time="0.018077"/>
+      <testcase name="test_get_rate_json" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="43" assertions="1" time="0.016388"/>
+      <testcase name="test_get_online_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="49" assertions="1" time="0.859208"/>
+      <testcase name="test_negative_get_online_names" class="currency_test" file="/Applications/MAMP/htdocs/application/tests/models/Currency_test.php" line="56" assertions="1" time="0.371956"/>
     </testsuite>
   </testsuite>
 </testsuites>
